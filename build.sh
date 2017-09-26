@@ -9,7 +9,8 @@ if [ "$_grafana_version" != "" ]; then
 	docker build \
 		--build-arg DOWNLOAD_URL=https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${_grafana_version}_amd64.deb \
 		--tag "grafana/grafana:${_grafana_version}" \
-		--no-cache=true .
+		#--no-cache=true .
+		.
 	docker tag grafana/grafana:${_grafana_version} grafana/grafana:latest
 
 else
